@@ -95,6 +95,13 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title"> 
+								<a class="collapsed" href="ViewReport_PendidikanDimilikiGrafik.php" target="_blank">Grafik Jumlah Karyawan per Pendidikan yang Dimiliki</a> 
+							</h4>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"> 
 								<a class="collapsed" href="#" target="_blank" style="color:red">Rekaptulasi Status Keluarga per Jabatan</a> 
 							</h4>
 						</div>
