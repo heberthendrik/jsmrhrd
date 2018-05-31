@@ -13,7 +13,7 @@
 </style>
 
 <header class="panel-heading" style="margin-top:20px;">
-	<h2 class="panel-title">Rekaptulasi Jumlah Karyawan per Pendidikan yang Dimiliki</h2>
+	<h2 class="panel-title">Rekaptulasi Jumlah Karyawan per Gender</h2>
 </header>
 <div class="panel-body" style="margin-top:25px;">
 	<div class="col-md-12">
@@ -30,37 +30,39 @@
 (function() {
 if( $('#GrafikJumlahKaryawanPerPendidikanYangDimiliki').get(0) ) {
 	new Chartist.Bar('#GrafikJumlahKaryawanPerPendidikanYangDimiliki', {
-		labels: [
+		labels: 
+		[
 		<?php
-		$function_GetAllPendidikan = GetAllPendidikan();
-		for( $i=0;$i<$function_GetAllPendidikan['TOTAL_ROW'];$i++ ){
-		
-			$query = "select count(id) as total_row from jsmrhrd_employee where ID_PENDIDIKAN_DIMILIKI = '".$function_GetAllPendidikan['ID'][$i]."'";
-			$result = $db->query($query);
-			$row = $result->fetch_assoc();
-			$jumlah[] = $row['total_row'];
-				
-				
-			echo '"'.$function_GetAllPendidikan['PENDIDIKAN'][$i].' ['.$row['total_row'].']"';
-			
-			if( $i != ($function_GetAllPendidikan['TOTAL_ROW']-1) ){
-				echo ',';
-			}
-		}
+		$query = "select count(id) as total_row from jsmrhrd_employee where gender = 'L'";
+		$result = $db->query($query);
+		$row = $result->fetch_assoc();
+		$jumlah_pria = $row['total_row'];
+		echo "'Pria [".$jumlah_pria."]'"
+		?>
+		,
+		<?php
+		$query = "select count(id) as total_row from jsmrhrd_employee where gender = 'P'";
+		$result = $db->query($query);
+		$row = $result->fetch_assoc();
+		$jumlah_wanita = $row['total_row'];
+		echo "'Wanita [".$jumlah_wanita."]'"
 		?>
 		],
 		series: 
 		[
 			[
 			<?php
-			for( $i=0;$i<count($jumlah);$i++ ){
-	
-				echo '"'.$jumlah[$i].'"';
-				
-				if( $i != (count($jumlah)-1) ){
-					echo ',';
-				}
-			}
+			$query = "select count(id) as total_row from jsmrhrd_employee where gender = 'L'";
+			$result = $db->query($query);
+			$row = $result->fetch_assoc();
+			echo $row['total_row'];
+			?>
+			,
+			<?php
+			$query = "select count(id) as total_row from jsmrhrd_employee where gender = 'P'";
+			$result = $db->query($query);
+			$row = $result->fetch_assoc();
+			echo $row['total_row'];
 			?>
 			]
 		]

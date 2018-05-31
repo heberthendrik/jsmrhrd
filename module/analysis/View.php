@@ -102,6 +102,34 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title"> 
+								<a class="collapsed" href="ViewReport_PendidikanDiakuiGrafik.php" target="_blank">Grafik Jumlah Karyawan per Pendidikan yang Diakui</a> 
+							</h4>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"> 
+								<a class="collapsed" href="ViewReport_GenderGrafik.php" target="_blank">Grafik Jumlah Karyawan per Gender</a> 
+							</h4>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"> 
+								<a class="collapsed" href="ViewReport_AgamaGrafik.php" target="_blank">Grafik Jumlah Karyawan per Agama</a> 
+							</h4>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"> 
+								<a class="collapsed" href="ViewReport_RangeUsiaGrafik.php" target="_blank">Grafik Jumlah Karyawan per Range Usia</a> 
+							</h4>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"> 
 								<a class="collapsed" href="#" target="_blank" style="color:red">Rekaptulasi Status Keluarga per Jabatan</a> 
 							</h4>
 						</div>

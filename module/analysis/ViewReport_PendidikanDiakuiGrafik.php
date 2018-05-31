@@ -13,7 +13,7 @@
 </style>
 
 <header class="panel-heading" style="margin-top:20px;">
-	<h2 class="panel-title">Rekaptulasi Jumlah Karyawan per Pendidikan yang Dimiliki</h2>
+	<h2 class="panel-title">Rekaptulasi Jumlah Karyawan per Pendidikan yang Diakui</h2>
 </header>
 <div class="panel-body" style="margin-top:25px;">
 	<div class="col-md-12">
@@ -35,7 +35,7 @@ if( $('#GrafikJumlahKaryawanPerPendidikanYangDimiliki').get(0) ) {
 		$function_GetAllPendidikan = GetAllPendidikan();
 		for( $i=0;$i<$function_GetAllPendidikan['TOTAL_ROW'];$i++ ){
 		
-			$query = "select count(id) as total_row from jsmrhrd_employee where ID_PENDIDIKAN_DIMILIKI = '".$function_GetAllPendidikan['ID'][$i]."'";
+			$query = "select count(id) as total_row from jsmrhrd_employee where ID_PENDIDIKAN_DIAKUI = '".$function_GetAllPendidikan['ID'][$i]."'";
 			$result = $db->query($query);
 			$row = $result->fetch_assoc();
 			$jumlah[] = $row['total_row'];

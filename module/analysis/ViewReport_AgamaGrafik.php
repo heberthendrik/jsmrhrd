@@ -13,7 +13,7 @@
 </style>
 
 <header class="panel-heading" style="margin-top:20px;">
-	<h2 class="panel-title">Rekaptulasi Jumlah Karyawan per Pendidikan yang Dimiliki</h2>
+	<h2 class="panel-title">Rekaptulasi Jumlah Karyawan per Agama</h2>
 </header>
 <div class="panel-body" style="margin-top:25px;">
 	<div class="col-md-12">
@@ -32,18 +32,18 @@ if( $('#GrafikJumlahKaryawanPerPendidikanYangDimiliki').get(0) ) {
 	new Chartist.Bar('#GrafikJumlahKaryawanPerPendidikanYangDimiliki', {
 		labels: [
 		<?php
-		$function_GetAllPendidikan = GetAllPendidikan();
-		for( $i=0;$i<$function_GetAllPendidikan['TOTAL_ROW'];$i++ ){
+		$function_GetAllAgama = GetAllAgama();
+		for( $i=0;$i<$function_GetAllAgama['TOTAL_ROW'];$i++ ){
 		
-			$query = "select count(id) as total_row from jsmrhrd_employee where ID_PENDIDIKAN_DIMILIKI = '".$function_GetAllPendidikan['ID'][$i]."'";
+			$query = "select count(id) as total_row from jsmrhrd_employee where AGAMA_ID = '".$function_GetAllAgama['ID'][$i]."'";
 			$result = $db->query($query);
 			$row = $result->fetch_assoc();
 			$jumlah[] = $row['total_row'];
 				
 				
-			echo '"'.$function_GetAllPendidikan['PENDIDIKAN'][$i].' ['.$row['total_row'].']"';
+			echo '"'.$function_GetAllAgama['AGAMA'][$i].' ['.$row['total_row'].']"';
 			
-			if( $i != ($function_GetAllPendidikan['TOTAL_ROW']-1) ){
+			if( $i != ($function_GetAllAgama['TOTAL_ROW']-1) ){
 				echo ',';
 			}
 		}
